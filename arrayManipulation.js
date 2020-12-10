@@ -6,8 +6,6 @@ function arrayManipulation(n, queries) {
         frequencyCounterOne[queryIndex] = 0
         queryIndex++
     }
-    let arrayInfo = {};
-    let result;
     let index = 10
     let ultimateArray = []
     queries.forEach((query) => {
