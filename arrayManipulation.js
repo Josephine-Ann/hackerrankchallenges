@@ -8,8 +8,8 @@ function arrayManipulation(n, queries) {
     queries.forEach((query) => {
         ultimateArray.push((numbers.filter(num => num >= query[0] && num <= query[1])))
     })
-    ultimateArray = [].concat(...ultimateArray)
     let indexOfQuery = 0
+    ultimateArray = [].concat(...ultimateArray)
     let index = 1
     let numberOfItemsToAddTo = 0
     ultimateArray.forEach((num) => {
@@ -21,7 +21,9 @@ function arrayManipulation(n, queries) {
         }
         index++
     })
+    console.log(ultimateArray)
     return Math.max(...Object.values(frequencyCounterOne))
+
 }
 
 
