@@ -1,45 +1,27 @@
 function arrayManipulation(n, queries) {
-    let queryIndex = 1
-    let number;
-    let frequencyCounterOne = {}
-    while (queryIndex <= n) {
-        frequencyCounterOne[queryIndex] = 0
-        queryIndex++
-    }
-    let index = 10
+    let frequencyCounterOne = new Map()
+    let numbers = Array.from({ length: n }, (x, i) => i + 1);
+    numbers.forEach((number) => {
+        frequencyCounterOne[number] = 0
+    })
     let ultimateArray = []
     queries.forEach((query) => {
-        number = query[2]
-        ultimateArray.push(new Array((query[1] + 1) - query[0]).fill().map((d, i) => i + query[0]))
-        index += 10
+        ultimateArray.push((numbers.filter(num => num >= query[0] && num <= query[1])))
     })
-    let indexOfArray = 0
-    ultimateArray.forEach((item) => {
-        item.push([queries[indexOfArray][2]])
-        indexOfArray++
-    })
-    indexOfArray = 0
     ultimateArray = [].concat(...ultimateArray)
-    let queryCount = 0
-    let numbersToAdd = ultimateArray.filter(item => typeof item === 'object')
-    numbersToAdd = [].concat(...numbersToAdd)
-    let objectSumValues = {}
-    let adding;
-    ultimateArray.forEach((item) => {
-        if (typeof item !== 'object' && !objectSumValues[item]) {
-            objectSumValues[item] = 0
+    let indexOfQuery = 0
+    let index = 1
+    let numberOfItemsToAddTo = 0
+    ultimateArray.forEach((num) => {
+        numberOfItemsToAddTo = queries[indexOfQuery][1] - queries[indexOfQuery][0] + 1
+        frequencyCounterOne[num] = frequencyCounterOne[num] + queries[indexOfQuery][2]
+        if (index === numberOfItemsToAddTo) {
+            indexOfQuery++
+            index = 0
         }
-        adding = numbersToAdd[queryCount]
-        if (typeof ultimateArray[indexOfArray + 1] !== 'object' && typeof item !== 'object') {
-            objectSumValues[item] = objectSumValues[item] + adding
-        } else if (typeof ultimateArray[indexOfArray + 1] === 'object' && typeof item !== 'object') {
-            objectSumValues[item] = objectSumValues[item] + adding
-            queryCount++
-        }
-        indexOfArray++
+        index++
     })
-    let finalArray = Object.values(objectSumValues)
-    return Math.max(...finalArray)
+    return Math.max(...Object.values(frequencyCounterOne))
 }
 
 
