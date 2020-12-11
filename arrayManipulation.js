@@ -1,29 +1,30 @@
 function arrayManipulation(n, queries) {
     let frequencyCounterOne = new Map()
-    let numbers = Array.from({ length: n }, (x, i) => i + 1);
-    numbers.forEach((number) => {
-        frequencyCounterOne[number] = 0
-    })
-    let ultimateArray = []
-    queries.forEach((query) => {
-        ultimateArray.push((numbers.filter(num => num >= query[0] && num <= query[1])))
-    })
+    let totalIterations = (queries.length) * n
     let indexOfQuery = 0
-    ultimateArray = [].concat(...ultimateArray)
     let index = 1
     let numberOfItemsToAddTo = 0
-    ultimateArray.forEach((num) => {
-        numberOfItemsToAddTo = queries[indexOfQuery][1] - queries[indexOfQuery][0] + 1
-        frequencyCounterOne[num] = frequencyCounterOne[num] + queries[indexOfQuery][2]
+    let indexNumberToStartCreating = 0
+    while (totalIterations > 0) {
+        if (!indexNumberToStartCreating || indexNumberToStartCreating < 1) {
+            indexNumberToStartCreating = queries[indexOfQuery][0]
+        }
+        if (numberOfItemsToAddTo === 0) {
+            numberOfItemsToAddTo = queries[indexOfQuery][1] - queries[indexOfQuery][0] + 1
+            totalIterations -= (n - numberOfItemsToAddTo)
+        }
+        frequencyCounterOne[indexNumberToStartCreating] ? frequencyCounterOne[indexNumberToStartCreating] = frequencyCounterOne[indexNumberToStartCreating] + queries[indexOfQuery][2] : frequencyCounterOne[indexNumberToStartCreating] = queries[indexOfQuery][2]
         if (index === numberOfItemsToAddTo) {
             indexOfQuery++
+            indexNumberToStartCreating = -1
             index = 0
+            numberOfItemsToAddTo = 0
         }
         index++
-    })
-    console.log(ultimateArray)
+        indexNumberToStartCreating++
+        totalIterations--
+    }
     return Math.max(...Object.values(frequencyCounterOne))
-
 }
 
 
