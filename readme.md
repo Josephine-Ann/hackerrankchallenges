@@ -3,6 +3,7 @@ Hackerrank Challenges
 roughEditingTestData is sometimes used when I need to quickly edit the data-heavy inputs
 from HackerRank, e.g.
 2 3 4 5 -> [2, 3, 4, 5]
+(but much, much longer!)
 
 bribes.js
 https://www.hackerrank.com/challenges/new-year-chaos/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
