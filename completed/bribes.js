@@ -52,3 +52,4 @@ function minimumBribes(q) {
 
 minimumBribes([1, 2, 5, 3, 4, 7, 8, 6])
 // should be 2
+
