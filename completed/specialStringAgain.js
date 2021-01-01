@@ -1,6 +1,5 @@
 function substrCount(n, s) {
     let count = n
-    let index = 0
     s = s.split('')
     let lengthLoop = 0
     for (let i = 0; i < s.length; i++) {
@@ -10,7 +9,7 @@ function substrCount(n, s) {
         lengthLoop += (s.length - i - 1)
     }
     let runningStrings;
-    index = 0
+    let index = 0
     let indexLastCharacter = s.length
     for (let j = 1; j < lengthLoop + 1; j++) {
         runningStrings = [...new Set(s.slice(index, indexLastCharacter))]
