@@ -16,15 +16,13 @@ function substrCount(n, s) {
     let indexLastCharacter = s.length
     for (let j = 1; j < lengthLoop + 1; j++) {
         runningStrings[j] = [...new Set(s.slice(index, indexLastCharacter))]
+        if (runningStrings[j].length === 1) {
+            count++
+        }
         indexLastCharacter--
         if (indexLastCharacter === index + 1) {
             indexLastCharacter = s.length
             index++
-        }
-    }
-    for (const property in runningStrings) {
-        if (runningStrings[property].length === 1) {
-            count++
         }
     }
     return count
