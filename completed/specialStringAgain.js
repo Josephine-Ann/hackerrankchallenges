@@ -9,12 +9,12 @@ function substrCount(n, s) {
         }
         lengthLoop += (s.length - i - 1)
     }
-    let runningStrings = {}
+    let runningStrings;
     index = 0
     let indexLastCharacter = s.length
     for (let j = 1; j < lengthLoop + 1; j++) {
-        runningStrings[j] = [...new Set(s.slice(index, indexLastCharacter))]
-        if (runningStrings[j].length === 1) {
+        runningStrings = [...new Set(s.slice(index, indexLastCharacter))]
+        if (runningStrings.length === 1) {
             count++
         }
         indexLastCharacter--
