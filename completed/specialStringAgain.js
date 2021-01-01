@@ -1,19 +1,12 @@
 function substrCount(n, s) {
     let count = n
-    let threeChar = []
     let index = 0
     s = s.split('')
-    s.forEach(element => {
-        if (s[index + 1] && s[index + 2]) {
-            threeChar.push([element, s[index + 1], s[index + 2]])
-        }
-        index++
-    });
-    threeChar.forEach(element => {
-        if (element[0] === element[2] && element[0] !== element[1]) {
+    for (let i = 0; i < s.length; i++) {
+        if (s[i + 1] && s[i + 2] && s[i] === s[i + 2] && s[i + 1] !== s[i]) {
             count++
         }
-    })
+    }
     let lengthLoop = 0
     for (let i = 0; i < s.length; i++) {
         lengthLoop += (s.length - i - 1)
