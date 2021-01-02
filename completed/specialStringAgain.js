@@ -27,7 +27,3 @@ function substrCount(n, s) {
 
 // console.log(substrCount(5, 'asasd'))
 console.log(substrCount(4, 'aaaa'))
-
-// get individual characters
-// make an array to fill with... 
-// 3-character strings
