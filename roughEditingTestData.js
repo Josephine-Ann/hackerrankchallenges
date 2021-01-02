@@ -232,3 +232,24 @@ console.log(concurrentString)
     [15, 30], [15, 30],
     [7, 10]
 ]
+
+let count = 0;
+let smallest = Math.min(...A)
+let indexSmallest = A.indexOf(smallest)
+A.splice(indexSmallest, 1)
+let secondSmallest = Math.min(...A)
+let indexSecondSmallest = A.indexOf(secondSmallest)
+A.splice(indexSecondSmallest, 1)
+let newItem;
+for (let i = 0; smallest < k && A.length > 1; i++) {
+    newItem = smallest + (secondSmallest * 2)
+    A.push(newItem)
+    count++
+    smallest = Math.min(...A)
+    indexSmallest = A.indexOf(smallest)
+    A.splice(indexSmallest, 1)
+    secondSmallest = Math.min(...A)
+    indexSecondSmallest = A.indexOf(secondSmallest)
+    A.splice(indexSecondSmallest, 1)
+}
+return A.length > 1 ? count : -1

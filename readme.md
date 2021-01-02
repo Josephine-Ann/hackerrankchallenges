@@ -64,3 +64,9 @@ https://www.hackerrank.com/challenges/special-palindrome-again/problem?h_l=inter
 
 printLinkedList.js
 https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/problem
+
+arrayDS.js
+https://www.hackerrank.com/challenges/arrays-ds/problem
+
+cookies.js
+https://www.hackerrank.com/challenges/jesse-and-cookies/problem
