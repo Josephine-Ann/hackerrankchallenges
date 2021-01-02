@@ -5,7 +5,6 @@ function matchingStrings(strings, queries) {
     let counts = []
     let repetitions = queries.length + (strings.length * queries.length)
     for (let i = 0; i < repetitions; i++) {
-        console.log('strings ' + strings[indexOfStrings])
         if (strings[indexOfStrings] === queries[indexOfQueries]) {
             count++
         }
@@ -14,7 +13,6 @@ function matchingStrings(strings, queries) {
             count = 0
             indexOfStrings = 0
             indexOfQueries++
-            console.log('queries ' + queries[indexOfQueries])
         } else {
             indexOfStrings++
         }
