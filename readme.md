@@ -70,3 +70,6 @@ https://www.hackerrank.com/challenges/arrays-ds/problem
 
 cookies.js
 https://www.hackerrank.com/challenges/jesse-and-cookies/problem
+
+matchingStrings.js
+https://www.hackerrank.com/challenges/sparse-arrays/problem
