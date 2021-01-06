@@ -123,3 +123,5 @@ console.log(minimumMoves(['.X..XX...X', 'X.........', '.X.......X', '..........'
 // works - 3
 console.log(minimumMoves(['...', '.X.', '.X.'], 2, 0, 2, 2))
 // works - 3
+
+// wrong answer to huge, truncated cases
