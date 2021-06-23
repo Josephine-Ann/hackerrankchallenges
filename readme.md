@@ -59,3 +59,20 @@ https://www.hackerrank.com/challenges/ctci-fibonacci-numbers/problem?h_l=intervi
 isValid.js
 https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=strings
 
+specialStringAgain.js
+https://www.hackerrank.com/challenges/special-palindrome-again/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=strings
+
+printLinkedList.js
+https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list/problem
+
+arrayDS.js
+https://www.hackerrank.com/challenges/arrays-ds/problem
+
+cookies.js
+https://www.hackerrank.com/challenges/jesse-and-cookies/problem
+
+matchingStrings.js
+https://www.hackerrank.com/challenges/sparse-arrays/problem
+
+minimumMoves.js
+https://www.hackerrank.com/challenges/castle-on-the-grid/problem
