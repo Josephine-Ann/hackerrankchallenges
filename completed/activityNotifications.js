@@ -33,7 +33,7 @@ for (let i = d; i < expenditure.length; i++) {
     currentSubstringUnsorted.push(expenditure[i])
     even ? median = (currentSubstringSorted[startMedian] + currentSubstringSorted[endMedian]) / 2 : median = currentSubstringSorted[startMedian]
 }
-return notifications
+    return notifications
 }
 
 var items = Array.from(Array(10000).keys())
@@ -42,5 +42,5 @@ const shuffledArray = items.sort((a, b) => 0.5 - Math.random());
 console.log(activityNotifications(shuffledArray, 300))
 
 
-
+// https://www.hackerrank.com/challenges/fraudulent-activity-notifications/problem
 
