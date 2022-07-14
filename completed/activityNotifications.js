@@ -21,7 +21,7 @@ let median = undefined;
 const startMedian = (d - 2) / 2
 const endMedian = startMedian + 1
 const even = d % 2 === 0
-even ? median = (currentSubstringSorted[startMedian] + currentSubstringSorted[endMedian]) / 2 : median = currentSubstringSorted[(d - 1) / 2]
+even ? median = (currentSubstringSorted[startMedian] + currentSubstringSorted[endMedian]) / 2 : median = currentSubstringSorted[startMedian]
 let notifications = 0;
 for (let i = d; i < expenditure.length; i++) {
     if (expenditure[i] >= (median * 2)) notifications++
@@ -31,7 +31,7 @@ for (let i = d; i < expenditure.length; i++) {
     currentSubstringSorted.splice((sortedIndex(currentSubstringSorted, expenditure[i])), 0, expenditure[i])
     currentSubstringUnsorted.shift()
     currentSubstringUnsorted.push(expenditure[i])
-    even ? median = (currentSubstringSorted[startMedian] + currentSubstringSorted[endMedian]) / 2 : median = currentSubstringSorted[(d - 1) / 2]
+    even ? median = (currentSubstringSorted[startMedian] + currentSubstringSorted[endMedian]) / 2 : median = currentSubstringSorted[startMedian]
 }
 return notifications
 }
